@@ -3,7 +3,6 @@ using Npgsql;
 using SurveyInterviewer.Abstractions;
 using SurveyInterviewer.Dto;
 using SurveyInterviewer.EfCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SurveyInterviewer.Implementations;
 
@@ -89,7 +88,7 @@ public class SurveyService(
         Interview interview = new Interview()
         {
             StartedAt = DateTime.UtcNow,
-            SurveyInterviews = [ new SurveyInterview() { SurveyId = surveyId, InterviewId = interviewId } ]
+            SurveyInterviews = [new SurveyInterview() { SurveyId = surveyId, InterviewId = interviewId }]
         };
 
         (_, IEnumerable<string> errors) = await ExecuteTransactionAsync(interview, async (t, ct) =>
@@ -157,7 +156,7 @@ public class SurveyService(
 
         if (data.Survey == null)
         {
-            return [ "Нет такой анкеты"];
+            return ["Нет такой анкеты"];
         }
 
         if (data.Survey.SurveyInterviews.Count() != 1)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SurveyInterviewer;
+﻿namespace SurveyInterviewer;
 
 public partial class Interview
 {

@@ -17,7 +17,7 @@ public class SurveyController(
     [ProducesResponseType<SurveyQuestion>(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> StartInterviewAsync(
-        [FromQuery]int surveyId,
+        [FromQuery] int surveyId,
         [FromQuery] int userId,
         CancellationToken ct = default)
     {

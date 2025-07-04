@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Trace;
-using System.Diagnostics;
 using SurveyInterviewer.EfCore;
+using System.Diagnostics;
 
 namespace SurveyInterviewer.MigrationService;
 
