@@ -1,0 +1,121 @@
+@SurveyInterviewer_HostAddress = https://localhost:7232
+
+# начать опрос с ID=1 для интервьюера с ID=1
+# в результате придет первый вопрос и варианты ответа к нему
+POST {{SurveyInterviewer_HostAddress}}/survey/start?surveyId=1&userId=1
+
+###
+
+# отправить ответ на первый вопрос
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json 
+{
+    "surveyId": 1,
+    "interviewId": 1,
+    "questionId": 1,
+    "answerIds": [ 2 ]
+}
+
+###
+
+# отправить ответы на последующие вопросы
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json 
+{
+    "surveyId": 1,
+    "interviewId": 1,
+    "questionId": 2,
+    "answerIds": [ 5 ]
+}
+###
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 1,
+    "interviewId": 1,
+    "questionId": 3,
+    "answerIds": [ 7 ]
+}
+###
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 1,
+    "interviewId": 1,
+    "questionId": 4,
+    "answerIds": [ 11 ]
+}
+###
+
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 1,
+    "interviewId": 1,
+    "questionId": 5,
+    "answerIds": [ 16 ]
+}
+###
+# получить ответы для интервью с ID=1
+GET {{SurveyInterviewer_HostAddress}}/survey/answers/1
+###
+
+
+###
+# начать опрос с ID=2 для интервьюера с ID=1
+# в результате придет первый вопрос и варианты ответа к нему
+POST {{SurveyInterviewer_HostAddress}}/survey/start?surveyId=2&userId=2
+
+###
+
+# отправить ответ на первый вопрос
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json 
+{
+    "surveyId": 2,
+    "interviewId": 2,
+    "questionId": 1,
+    "answerIds": [ 1 ]
+}
+
+###
+
+# отправить ответы на последующие вопросы
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json 
+{
+    "surveyId": 2,
+    "interviewId": 2,
+    "questionId": 2,
+    "answerIds": [ 5 ]
+}
+###
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 2,
+    "interviewId": 2,
+    "questionId": 3,
+    "answerIds": [ 7 ]
+}
+###
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 2,
+    "interviewId": 2,
+    "questionId": 6,
+    "answerIds": [ 18 ]
+}
+###
+POST {{SurveyInterviewer_HostAddress}}/survey/answers
+Content-Type: application/json
+{
+    "surveyId": 2,
+    "interviewId": 2,
+    "questionId": 7,
+    "answerIds": [ 21, 22 ]
+}
+###
+# получить ответы для интервью с ID=2
+GET {{SurveyInterviewer_HostAddress}}/survey/answers/2
